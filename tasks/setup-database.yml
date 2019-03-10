@@ -12,10 +12,10 @@
     masked: no
     daemon_reload: yes
 
-- name: Create postgres user for falcon app
+- name: Create postgres user for Falcon app
   become: yes
   become_user: postgres
   postgresql_user:
     name: "vagrant"
-    password: "supersecretpasswordforvagrant"
+    password: ""
     role_attr_flags: "CREATEDB"
