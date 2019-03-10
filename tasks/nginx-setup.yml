@@ -62,6 +62,8 @@
     image: nginx:stable-alpine
     network_mode: host
     restart_policy: always
+    output_logs: yes
+    log_driver: json-file
     log_options:
       max-size: 10m
       max-file: 5
