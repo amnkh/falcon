@@ -1,3 +1,4 @@
 ---
 domain_fqdn_address: falcon.khoshnood.net
-local_pwd_ansible_path: /Users/khoshnood/ansible/falcon
+ubuntu_server_version: bionic
+set_timezone: Asia/Tehran

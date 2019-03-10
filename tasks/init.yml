@@ -7,6 +7,6 @@
     masked: no
     daemon_reload: yes
 
-- name: "set timezone to Asia/Tehran"
+- name: "set timezone"
   timezone:
-    name: Asia/Tehran
+    name: "{{ set_timezone }}"

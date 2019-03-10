@@ -16,7 +16,7 @@
     mode: 0775
 
 - name: Generate nginx-host.conf and copy to server
-  action: template src="{{ local_pwd_ansible_path }}/files/nginx-host.conf.j2" dest=/CORE/local-nginx/nginx/conf.d/{{ domain_fqdn_address }}.conf
+  action: template src="files/nginx-host.conf.j2" dest=/CORE/local-nginx/nginx/conf.d/{{ domain_fqdn_address }}.conf
 
 - name: Generate an OpenSSL private key.
   openssl_privatekey:
