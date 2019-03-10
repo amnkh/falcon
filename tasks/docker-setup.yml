@@ -1,0 +1,27 @@
+---
+- name: "Register Docker's key in system"
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: "Add Docker APT Repository in system"
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+
+- name: "Install Docker"
+  apt:
+    state: latest
+    update_cache: yes
+    pkg:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+
+- name: "Start and Enable Docker"
+  systemd:
+    name: docker
+    enabled: yes
+    state: started
+    masked: no
+    daemon_reload: yes
