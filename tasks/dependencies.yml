@@ -26,6 +26,7 @@
     - postgresql
     - python-psycopg2
     - ruby-bundler
+    - git
 
 
 - name: "Add TCP Rules to firewall"

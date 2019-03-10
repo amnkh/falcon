@@ -7,3 +7,7 @@
     group: vagrant
     mode: 0775
 
+- name: Git clone
+  git:
+    repo: 'https://github.com/UnifiedPaymentSolutions/rails_sample.git'
+    dest: /CORE
