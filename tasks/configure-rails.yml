@@ -12,3 +12,17 @@
   git:
     repo: 'https://github.com/UnifiedPaymentSolutions/rails_sample.git'
     dest: /CORE/rails_sample
+
+- name: Run bundle install
+  become: yes
+  become_user: vagrant
+  command: /usr/bin/bundle install
+  args:
+    chdir: /CORE/rails_sample
+
+- name: Run rails db:setup
+  become: yes
+  become_user: vagrant
+  command: /usr/local/bin/rails db:setup
+  args:
+    chdir: /CORE/rails_sample
