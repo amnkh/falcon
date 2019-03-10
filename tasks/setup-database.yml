@@ -1,3 +1,4 @@
+---
 - name: Add the group Vagrant
   group:
     name: vagrant
