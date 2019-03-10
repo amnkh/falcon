@@ -33,5 +33,8 @@ Then change directory to falcon root directory and run:
 ``` bash
 ansible-playbook  -i hosts main.yml
 ```
-It will install prerequisites packages, Docker, pip, PostgreSQL and clones Ruby app and run it, then start a NGINX in docker as reverse proxy. For better security and performance, you can run it behind Cloudflare CDN and WAF.
+It will install prerequisites packages, Docker, pip, PostgreSQL and clones Ruby app and run it, then start a NGINX in docker as reverse proxy. For better security and performance, you can run it behind [Cloudflare](https://www.cloudflare.com/) CDN and WAF.
+
 #### Here are some Cloudflare Configurations:
+
+![image](documents/image_2019-03-11_03-26-28.png)
