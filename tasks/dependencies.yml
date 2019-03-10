@@ -23,6 +23,7 @@
     - zlib1g-dev
     - libpq-dev
     - sudo
+    - postgresql
 
 
 - name: "Add TCP Rules to firewall"
