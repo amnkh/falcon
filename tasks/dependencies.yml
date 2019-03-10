@@ -1,0 +1,7 @@
+---
+- name: "Install Dependencies"
+  apt:
+    state: latest
+    update_cache: yes
+    pkg:
+    - python
