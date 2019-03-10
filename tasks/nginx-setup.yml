@@ -62,6 +62,9 @@
     image: nginx:stable-alpine
     network_mode: host
     restart_policy: always
+    log_options:
+      max-size: 10m
+      max-file: 5
     volumes:
       - /CORE/local-nginx/nginx/conf.d:/etc/nginx/conf.d:ro
       - /CORE/local-nginx/nginx/certs:/etc/nginx/certs:ro
