@@ -3,4 +3,5 @@
   tasks:
     - include_tasks: tasks/dependencies.yml
     - include_tasks: tasks/setup-database.yml
+    - include_tasks: tasks/configure-rails.yml
 
