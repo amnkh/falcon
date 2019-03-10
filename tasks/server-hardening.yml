@@ -23,7 +23,7 @@
 - name: Copy SSHD config file
   copy:
     remote_src: no
-    src: \"{{ local_pwd_ansible_path }}\"/files/sshd_config
+    src: "\"{{ local_pwd_ansible_path }}\"/files/sshd_config"
     dest: /etc/ssh/sshd_config
     owner: root
     group: root
