@@ -4,6 +4,7 @@
     path: /CORE
     state: directory
     owner: vagrant
+    group: vagrant
     mode: 0775
 
 - name: Git clone

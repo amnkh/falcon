@@ -1,7 +1,13 @@
+- name: Add the group Vagrant
+  group:
+    name: vagrant
+    state: present
+
 - name: Add the user Vagrant
   user:
     name: vagrant
     comment: Vagrant for Falcon
+    group: vagrant
 
 - name: "Enable PostgreSQL"
   systemd:
