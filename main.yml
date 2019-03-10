@@ -2,5 +2,5 @@
 - hosts: falcon
   tasks:
     - include_tasks: tasks/dependencies.yml
-    - include_tasks: tasks/docker-setup.yml
+    - include_tasks: tasks/setup-database.yml
 

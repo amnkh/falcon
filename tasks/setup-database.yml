@@ -1,0 +1,6 @@
+- name: Add the user Vagrant
+  user:
+    name: vagrant
+    comment: Vagrant for Falcon
+    uid: 1040
+    group: sudo

@@ -14,19 +14,15 @@
     - python
     - ntp
     - vim
-    - wget
     - curl
-    - screen
-    - htop
-    - smartmontools
-    - sudo
     - ufw
-    - apt-transport-https
-    - ca-certificates
-    - gnupg-agent
-    - software-properties-common
     - nginx
     - ruby
+    - build-essential
+    - ruby-dev
+    - zlib1g-dev
+    - libpq-dev
+    - sudo
 
 
 - name: "Add TCP Rules to firewall"
@@ -35,7 +31,6 @@
     port: "{{ item }}"
     proto: tcp
   with_items:
-    - 443
     - 80
     - 22
 
