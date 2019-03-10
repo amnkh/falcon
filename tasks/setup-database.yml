@@ -3,3 +3,19 @@
     name: vagrant
     comment: Vagrant for Falcon
     group: sudo
+
+- name: "Enable PostgreSQL"
+  systemd:
+    name: postgresql
+    state: started
+    enabled: yes
+    masked: no
+    daemon_reload: yes
+
+- name: Create postgres user for falcon app
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: "vagrant"
+    password: "supersecretpasswordforvagrant"
+    role_attr_flags: "CREATEDB"
