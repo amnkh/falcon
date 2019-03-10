@@ -24,9 +24,20 @@
   with_items:
     - 443
     - 80
+    - 22
 
 - name: "Enable Firewall"
   systemd:
     name: ufw
     state: started
     enabled: yes
+    masked: no
+    daemon_reload: yes
+
+- name: "Enable NTP"
+  systemd:
+    name: ntp
+    state: started
+    enabled: yes
+    masked: no
+    daemon_reload: yes
