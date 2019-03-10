@@ -15,12 +15,14 @@
     dest: /CORE/rails_sample
 
 - name: Run bundle install
-  become: yes
-  become_user: vagrant
-  sudo: yes
+  become: no
   command: /usr/bin/bundle install
   args:
     chdir: /CORE/rails_sample
+
+- name: gem install bundler
+  become: no
+  command: /usr/bin/gem install bundler
 
 - name: Run rails db:setup
   become: yes
