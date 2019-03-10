@@ -42,7 +42,7 @@
     organization_name: 'Falcon Co'
     organizational_unit_name: 'IT Team'
     email_address: 'support@falcon.khoshnood.net'
-    subject_alt_name: 'DNS: {{ www.falcon.khoshnood.net'
+    subject_alt_name: 'DNS: www.falcon.khoshnood.net'
 
 - name: Generate a Self Signed OpenSSL certificate.
   openssl_certificate:
