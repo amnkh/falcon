@@ -25,6 +25,23 @@
     mode: 0644
     force: yes
 
+- name: Generate an OpenSSL private key.
+  openssl_privatekey:
+    path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.pem
+
+- name: Generate an OpenSSL CSR.
+  openssl_csr:
+    path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.csr
+    privatekey_path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.pem
+    common_name: "falcon.khoshnood.net"
+
+- name: Generate a Self Signed OpenSSL certificate.
+  openssl_certificate:
+    path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net-fullchain.pem
+    privatekey_path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.pem
+    csr_path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.csr
+    provider: selfsigned
+
 - name: Run NGINX in Docker
   docker_container:
     name: local_nginx
