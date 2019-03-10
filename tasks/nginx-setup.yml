@@ -1,10 +1,10 @@
 ---
-- name: Remove default NGINX config file
+- name: Remove default NGINX sites-available config file
   file:
     path: /etc/nginx/sites-available/default
     state: absent
 
-- name: Remove default NGINX config file
+- name: Remove default NGINX sites-enabled config file
   file:
     path: /etc/nginx/sites-enabled/default
     state: absent
@@ -12,7 +12,7 @@
 - name: Copy NGINX config file
   copy:
     remote_src: no
-    src: /Users/khoshnood/ansible/falcon/files/nginx-host.conf
+    src: ~/files/nginx-host.conf
     dest: /etc/nginx/sites-available/falcon.khoshnood.net.conf
     owner: root
     group: root

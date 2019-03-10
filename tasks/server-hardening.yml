@@ -1,0 +1,17 @@
+- name: Copy SSHD config file
+  copy:
+    remote_src: no
+    src: ~/files/sshd_config
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0644
+    force: yes
+
+- name: "Restart SSHD"
+  systemd:
+    name: sshd
+    state: restarted
+    enabled: yes
+    masked: no
+    daemon_reload: yes

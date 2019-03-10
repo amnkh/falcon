@@ -1,0 +1,11 @@
+Port 22
+PermitRootLogin yes
+MaxAuthTries 6
+PubkeyAuthentication yes
+PasswordAuthentication no
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
