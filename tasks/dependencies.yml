@@ -5,3 +5,11 @@
     update_cache: yes
     pkg:
     - python
+    - ntp
+    - vim
+    - wget
+    - curl
+    - screen
+    - htop
+    - smartmontools
+    - sudo
