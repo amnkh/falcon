@@ -26,7 +26,8 @@
     - gnupg-agent
     - software-properties-common
     - nginx
-    
+    - ruby
+
 
 - name: "Add TCP Rules to firewall"
   ufw:
