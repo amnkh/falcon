@@ -15,17 +15,8 @@
     group: root
     mode: 0775
 
-- name: Copy NGINX config file
-  copy:
-    remote_src: no
-    src: \"{{ local_pwd_ansible_path }}\"/files/nginx-host.conf
-    dest: /CORE/local-nginx/nginx/conf.d/{{ domain_fqdn_address }}.conf
-    owner: root
-    group: root
-    mode: 0644
-    force: yes
-    template:
-      src: code.conf.j2
+- name: Generate nginx-host.conf and copy to server
+  action: template src="{{ local_pwd_ansible_path }}/files/nginx-host.conf.j2" dest=/CORE/local-nginx/nginx/conf.d/{{ domain_fqdn_address }}.conf
 
 - name: Generate an OpenSSL private key.
   openssl_privatekey:
