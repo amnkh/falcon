@@ -19,7 +19,7 @@
   copy:
     remote_src: no
     src: /Users/khoshnood/ansible/falcon/files/nginx-host.conf
-    dest: /CORE/local-nginx/nginx/conf.d/falcon.khoshnood.net.conf
+    dest: /CORE/local-nginx/nginx/conf.d/{{ domain_fqdn_address }}.conf
     owner: root
     group: root
     mode: 0644
@@ -27,28 +27,28 @@
 
 - name: Generate an OpenSSL private key.
   openssl_privatekey:
-    path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.pem
+    path: /CORE/local-nginx/nginx/certs/{{ domain_fqdn_address }}.pem
     size: 2048
 
 - name: Generate an OpenSSL CSR.
   openssl_csr:
-    path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.csr
-    privatekey_path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.pem
-    common_name: "falcon.khoshnood.net"
+    path: /CORE/local-nginx/nginx/certs/{{ domain_fqdn_address }}.csr
+    privatekey_path: /CORE/local-nginx/nginx/certs/{{ domain_fqdn_address }}.pem
+    common_name: "{{ domain_fqdn_address }}"
     digest: 'sha256'
     country_name: 'IR'
     state_or_province_name: 'Tehran'
     locality_name: 'Tehran'
     organization_name: 'Falcon Co'
     organizational_unit_name: 'IT Team'
-    email_address: 'support@falcon.khoshnood.net'
-    subject_alt_name: 'DNS: www.falcon.khoshnood.net'
+    email_address: 'support@{{ domain_fqdn_address }}'
+    subject_alt_name: 'DNS: www.{{ domain_fqdn_address }}'
 
 - name: Generate a Self Signed OpenSSL certificate.
   openssl_certificate:
-    path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net-fullchain.pem
-    privatekey_path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.pem
-    csr_path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.csr
+    path: /CORE/local-nginx/nginx/certs/{{ domain_fqdn_address }}-fullchain.pem
+    privatekey_path: /CORE/local-nginx/nginx/certs/{{ domain_fqdn_address }}.pem
+    csr_path: /CORE/local-nginx/nginx/certs/{{ domain_fqdn_address }}.csr
     provider: selfsigned
 
 - name: Generate a Diffie-Hellman key.
