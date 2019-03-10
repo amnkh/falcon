@@ -1,0 +1,16 @@
+---
+- name: Download pip installation file
+  get_url:
+    url: https://bootstrap.pypa.io/get-pip.py
+    dest: /tmp/get-pip.py
+    mode: 0744
+
+- name: Run pip install
+  become: no
+  command: /tmp/get-pip.py "pip<10"
+
+- name: pip installs docker-py and runlike
+  pip:
+    name:
+      - docker-py
+      - runlike

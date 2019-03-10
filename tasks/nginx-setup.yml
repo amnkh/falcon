@@ -1,31 +1,27 @@
 ---
-- name: Remove default NGINX sites-available config file
+- name: Create NGINX conf.d directories
   file:
-    path: /etc/nginx/sites-available/default
-    state: absent
-
-- name: Remove default NGINX sites-enabled config file
-  file:
-    path: /etc/nginx/sites-enabled/default
-    state: absent
-
-- name: Copy NGINX config file
-  copy:
-    remote_src: no
-    src: /Users/khoshnood/ansible/falcon/files/nginx-host.conf
-    dest: /etc/nginx/sites-available/falcon.khoshnood.net.conf
+    path: /CORE/local-nginx/nginx/conf.d
+    state: directory
     owner: root
     group: root
-    mode: 0644
-    force: yes
+    mode: 0775
 
-- name: ln -s from sites-available to sites-enabled
-  file: src=/etc/nginx/sites-available/falcon.khoshnood.net.conf  dest=/etc/nginx/sites-enabled/falcon.khoshnood.net.conf state=link
+- name: Create NGINX certs directories
+  file:
+    path: /CORE/local-nginx/nginx/certs
+    state: directory
+    owner: root
+    group: root
+    mode: 0775
 
-- name: "Restart NGINX"
-  systemd:
-    name: nginx
-    state: restarted
-    enabled: yes
-    masked: no
-    daemon_reload: yes
+- name: Run NGINX in Docker
+  docker_container:
+    name: local_nginx
+    image: nginx:stable-alpine
+    network_mode: host
+    restart_policy: always
+    volumes:
+      - /CORE/local-nginx/nginx/conf.d:/etc/nginx/conf.d:ro
+      - /CORE/local-nginx/nginx/certs:/etc/nginx/certs:ro
+
