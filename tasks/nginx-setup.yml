@@ -51,6 +51,11 @@
     csr_path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.csr
     provider: selfsigned
 
+- name: Generate a Diffie-Hellman key.
+  openssl_dhparam:
+    path: /CORE/local-nginx/nginx/certs/dhparams.pem
+    size: 2048
+
 - name: Run NGINX in Docker
   docker_container:
     name: local_nginx
