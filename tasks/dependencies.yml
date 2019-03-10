@@ -25,6 +25,8 @@
     - ca-certificates
     - gnupg-agent
     - software-properties-common
+    - nginx
+    
 
 - name: "Add TCP Rules to firewall"
   ufw:
