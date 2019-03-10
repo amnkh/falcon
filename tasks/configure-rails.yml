@@ -4,10 +4,11 @@
     path: /CORE
     state: directory
     owner: vagrant
-    group: vagrant
     mode: 0775
 
 - name: Git clone
+  become: yes
+  become_user: vagrant
   git:
     repo: 'https://github.com/UnifiedPaymentSolutions/rails_sample.git'
-    dest: /CORE
+    dest: /CORE/rails_sample
