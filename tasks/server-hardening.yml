@@ -5,7 +5,6 @@
     port: "{{ item }}"
     proto: tcp
   with_items:
-    - 80
     - 443
     - 22
 
