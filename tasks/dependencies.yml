@@ -28,28 +28,9 @@
     - python-psycopg2
     - ruby-bundler
     - git
+    - fail2ban
 
 
-- name: "Add TCP Rules to firewall"
-  ufw:
-    rule: allow
-    port: "{{ item }}"
-    proto: tcp
-  with_items:
-    - 80
-    - 22
-
-- name: "Enable Firewall"
-  systemd:
-    name: ufw
-    state: started
-    enabled: yes
-    masked: no
-    daemon_reload: yes
-
-- name: "Enable UFW"
-  ufw:
-    state: enabled
 
 - name: "Enable NTP"
   systemd:

@@ -1,3 +1,25 @@
+---
+- name: "Add TCP Rules to firewall"
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+    proto: tcp
+  with_items:
+    - 80
+    - 22
+
+- name: "Enable Firewall"
+  systemd:
+    name: ufw
+    state: started
+    enabled: yes
+    masked: no
+    daemon_reload: yes
+
+- name: "Enable UFW"
+  ufw:
+    state: enabled
+
 - name: Copy SSHD config file
   copy:
     remote_src: no
@@ -11,6 +33,24 @@
 - name: "Restart SSHD"
   systemd:
     name: sshd
+    state: restarted
+    enabled: yes
+    masked: no
+    daemon_reload: yes
+
+- name: Copy fail2ban config file
+  copy:
+    remote_src: no
+    src: /Users/khoshnood/ansible/falcon/files/jail.local
+    dest: /etc/fail2ban/jail.local
+    owner: root
+    group: root
+    mode: 0644
+    force: yes
+
+- name: "Restart Fail2ban"
+  systemd:
+    name: fail2ban
     state: restarted
     enabled: yes
     masked: no
