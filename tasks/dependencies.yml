@@ -1,4 +1,11 @@
 ---
+- name: "Update and upgrade apt packages"
+  become: true
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 86400 #One day
+
 - name: "Install Dependencies"
   apt:
     state: latest
@@ -34,6 +41,10 @@
     masked: no
     daemon_reload: yes
 
+- name: "Enable UFW"
+  ufw:
+    state: enabled
+
 - name: "Enable NTP"
   systemd:
     name: ntp
@@ -41,3 +52,7 @@
     enabled: yes
     masked: no
     daemon_reload: yes
+
+- name: "set timezone to Asia/Tehran"
+  timezone:
+    name: Asia/Tehran
