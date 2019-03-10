@@ -1,7 +1,7 @@
 - name: Copy SSHD config file
   copy:
     remote_src: no
-    src: ~/files/sshd_config
+    src: /Users/khoshnood/ansible/falcon/files/sshd_config
     dest: /etc/ssh/sshd_config
     owner: root
     group: root

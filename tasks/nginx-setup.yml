@@ -12,7 +12,7 @@
 - name: Copy NGINX config file
   copy:
     remote_src: no
-    src: ~/files/nginx-host.conf
+    src: /Users/khoshnood/ansible/falcon/files/nginx-host.conf
     dest: /etc/nginx/sites-available/falcon.khoshnood.net.conf
     owner: root
     group: root
