@@ -4,8 +4,8 @@
     - include_tasks: tasks/dependencies.yml
     - include_tasks: tasks/init.yml
     - include_tasks: tasks/pip-installation.yml
-#    - include_tasks: tasks/server-hardening.yml
+    - include_tasks: tasks/server-hardening.yml
 #    - include_tasks: tasks/setup-database.yml
 #    - include_tasks: tasks/configure-rails.yml
-#    - include_tasks: tasks/docker-setup.yml
-#    - include_tasks: tasks/nginx-setup.yml
+    - include_tasks: tasks/docker-setup.yml
+    - include_tasks: tasks/nginx-setup.yml

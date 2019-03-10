@@ -15,7 +15,6 @@
       - docker-py
       - runlike
 
-
 - name: Remove pip installation file
   file:
     path: /tmp/get-pip.py

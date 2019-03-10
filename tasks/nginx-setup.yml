@@ -15,6 +15,16 @@
     group: root
     mode: 0775
 
+- name: Copy NGINX config file
+  copy:
+    remote_src: no
+    src: /Users/khoshnood/ansible/falcon/files/nginx-host.conf
+    dest: /CORE/local-nginx/nginx/conf.d/falcon.khoshnood.net.conf
+    owner: root
+    group: root
+    mode: 0644
+    force: yes
+
 - name: Run NGINX in Docker
   docker_container:
     name: local_nginx
@@ -24,4 +34,3 @@
     volumes:
       - /CORE/local-nginx/nginx/conf.d:/etc/nginx/conf.d:ro
       - /CORE/local-nginx/nginx/certs:/etc/nginx/certs:ro
-
