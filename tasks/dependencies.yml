@@ -12,6 +12,7 @@
     update_cache: yes
     pkg:
     - python
+    - htop
     - ntp
     - vim
     - curl
