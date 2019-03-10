@@ -30,3 +30,10 @@
   command: /usr/local/bin/rails db:setup
   args:
     chdir: /CORE/rails_sample
+
+- name: Run rails server
+  become: yes
+  become_user: vagrant
+  command: /usr/local/bin/rails server
+  args:
+    chdir: /CORE/rails_sample
