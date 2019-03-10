@@ -24,7 +24,7 @@
     - libpq-dev
     - sudo
     - postgresql
-    - psycopg2
+    - python-psycopg2
 
 
 - name: "Add TCP Rules to firewall"
