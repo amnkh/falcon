@@ -18,7 +18,7 @@
 - name: Copy NGINX config file
   copy:
     remote_src: no
-    src: /Users/khoshnood/ansible/falcon/files/nginx-host.conf
+    src: {{ local_pwd_ansible_path }}/files/nginx-host.conf
     dest: /CORE/local-nginx/nginx/conf.d/{{ domain_fqdn_address }}.conf
     owner: root
     group: root

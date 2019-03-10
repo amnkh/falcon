@@ -1,2 +1,3 @@
 ---
 domain_fqdn_address: falcon.khoshnood.net
+local_pwd_ansible_path: /Users/khoshnood/ansible/falcon

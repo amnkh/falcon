@@ -23,7 +23,7 @@
 - name: Copy SSHD config file
   copy:
     remote_src: no
-    src: /Users/khoshnood/ansible/falcon/files/sshd_config
+    src: {{ local_pwd_ansible_path }}/files/sshd_config
     dest: /etc/ssh/sshd_config
     owner: root
     group: root
@@ -41,7 +41,7 @@
 - name: Copy fail2ban config file
   copy:
     remote_src: no
-    src: /Users/khoshnood/ansible/falcon/files/jail.local
+    src: {{ local_pwd_ansible_path }}/files/jail.local
     dest: /etc/fail2ban/jail.local
     owner: root
     group: root
