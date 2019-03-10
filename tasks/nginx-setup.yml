@@ -1,0 +1,13 @@
+---
+- name: Remove default NGINX config file
+  file:
+    path: /etc/nginx/sites-available/default
+    state: absent
+
+- name: Copy NGINX config file
+  copy:
+    src: ~/files/nginx-host.conf
+    dest: /etc/nginx/sites-available/falcon.khoshnood.net.conf
+    owner: root
+    group: root
+    mode: 0644

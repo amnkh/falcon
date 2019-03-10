@@ -34,6 +34,6 @@
 - name: Run rails server
   become: yes
   become_user: vagrant
-  command: /usr/local/bin/rails server
+  command: /usr/local/bin/rails server -d
   args:
     chdir: /CORE/rails_sample
