@@ -17,6 +17,7 @@
 - name: Run bundle install
   become: yes
   become_user: vagrant
+  sudo: yes
   command: /usr/bin/bundle install
   args:
     chdir: /CORE/rails_sample

@@ -7,7 +7,7 @@
   user:
     name: vagrant
     comment: Vagrant for Falcon
-    group: vagrant
+    groups: vagrant,sudo
 
 - name: "Enable PostgreSQL"
   systemd:
