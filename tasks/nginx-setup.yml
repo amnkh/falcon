@@ -28,12 +28,21 @@
 - name: Generate an OpenSSL private key.
   openssl_privatekey:
     path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.pem
+    size: 2048
 
 - name: Generate an OpenSSL CSR.
   openssl_csr:
     path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.csr
     privatekey_path: /CORE/local-nginx/nginx/certs/falcon.khoshnood.net.pem
     common_name: "falcon.khoshnood.net"
+    digest: 'sha256'
+    country_name: 'IR'
+    state_or_province_name: 'Tehran'
+    locality_name: 'Tehran'
+    organization_name: 'Falcon Co'
+    organizational_unit_name: 'IT Team'
+    email_address: 'support@falcon.khoshnood.net'
+    subject_alt_name: 'DNS: {{ www.falcon.khoshnood.net'
 
 - name: Generate a Self Signed OpenSSL certificate.
   openssl_certificate:
