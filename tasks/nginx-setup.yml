@@ -11,3 +11,11 @@
     owner: root
     group: root
     mode: 0644
+
+- name: "Restart NGINX"
+  systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
+    masked: no
+    daemon_reload: yes
