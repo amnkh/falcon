@@ -4,13 +4,23 @@
     path: /etc/nginx/sites-available/default
     state: absent
 
+- name: Remove default NGINX config file
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+
 - name: Copy NGINX config file
   copy:
-    src: ~/files/nginx-host.conf
+    remote_src: no
+    src: /Users/khoshnood/ansible/falcon/files/nginx-host.conf
     dest: /etc/nginx/sites-available/falcon.khoshnood.net.conf
     owner: root
     group: root
     mode: 0644
+    force: yes
+
+- name: ln -s from sites-available to sites-enabled
+  file: src=/etc/nginx/sites-available/falcon.khoshnood.net.conf  dest=/etc/nginx/sites-enabled/falcon.khoshnood.net.conf state=link
 
 - name: "Restart NGINX"
   systemd:

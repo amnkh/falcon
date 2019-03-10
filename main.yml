@@ -5,4 +5,3 @@
     - include_tasks: tasks/setup-database.yml
     - include_tasks: tasks/configure-rails.yml
     - include_tasks: tasks/nginx-setup.yml
-
