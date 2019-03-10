@@ -13,3 +13,20 @@
     - htop
     - smartmontools
     - sudo
+    - ufw
+    - apt-transport-https
+
+- name: "Add TCP Rules to firewall"
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+    proto: tcp
+  with_items:
+    - 443
+    - 80
+
+- name: "Enable Firewall"
+  systemd:
+    name: ufw
+    state: started
+    enabled: yes
