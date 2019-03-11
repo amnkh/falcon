@@ -43,7 +43,7 @@ It will install prerequisites packages, Docker, pip, PostgreSQL and clones Ruby 
 
 ![image](documents/pagerules.png)
 
-After installation, you can check it in the browser:
+### After installation, you can check it in the browser:
 
 ![image](documents/falcon1.png)
 
