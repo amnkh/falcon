@@ -37,4 +37,8 @@ It will install prerequisites packages, Docker, pip, PostgreSQL and clones Ruby 
 
 #### Here are some Cloudflare Configurations:
 
-![image](documents/image_2019-03-11_03-26-28.png)
+![image](documents/dns.png)
+
+![image](documents/tls.png)
+
+![image](documents/pagerules.png)
