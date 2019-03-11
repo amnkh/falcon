@@ -60,3 +60,11 @@ It will install prerequisites packages, Docker, pip, PostgreSQL and clones Ruby 
 ![image](documents/falcon6.png)
 
 ![image](documents/falcon7.png)
+
+### Falcon Port mapping table:
+| Port | Service |
+|---|---|
+| `22` | SSHD |
+| `3000` | Ruby server |
+| `5432` | PostgreSQL |
+| `443` | NGINX (HTTPS) |
