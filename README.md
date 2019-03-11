@@ -42,3 +42,19 @@ It will install prerequisites packages, Docker, pip, PostgreSQL and clones Ruby 
 ![image](documents/tls.png)
 
 ![image](documents/pagerules.png)
+
+After installation, you can check it in the browser:
+
+![image](documents/falcon1.png)
+
+![image](documents/falcon2.png)
+
+![image](documents/falcon3.png)
+
+![image](documents/falcon4.png)
+
+![image](documents/falcon5.png)
+
+![image](documents/falcon6.png)
+
+![image](documents/falcon7.png)
