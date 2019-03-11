@@ -53,6 +53,8 @@ After installation, you can check it in the browser:
 
 ![image](documents/falcon4.png)
 
+![image](documents/falcon8.png)
+
 ![image](documents/falcon5.png)
 
 ![image](documents/falcon6.png)
