@@ -33,6 +33,12 @@ Then change directory to falcon root directory and run:
 ``` bash
 cd ~/falcon && ansible-playbook  -i hosts main.yml
 ```
+in case of connection error, SSH to the server, install python package and run ansible-playbook again:
+``` bash
+ssh root@192.168.1.10 -p 22
+apt update  && apt install -y python && exit
+cd ~/falcon && ansible-playbook  -i hosts main.yml
+```
 It will install prerequisites packages, Docker, pip, PostgreSQL and clones Ruby app and run it, then start NGINX in docker as reverse proxy. For better security and performance, you can run it behind [Cloudflare](https://www.cloudflare.com/) CDN and WAF.
 
 #### Here are some Cloudflare Configurations:
