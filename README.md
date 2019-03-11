@@ -41,7 +41,7 @@ cd ~/falcon && ansible-playbook  -i hosts main.yml
 ```
 It will install prerequisites packages, Docker, pip, PostgreSQL and clones Ruby app and run it, then start NGINX in docker as reverse proxy. For better security and performance, you can run it behind [Cloudflare](https://www.cloudflare.com/) CDN and WAF.
 
-#### Here are some Cloudflare Configurations:
+#### Here are some Cloudflare Configurations
 
 ![image](documents/dns.png)
 
@@ -49,7 +49,7 @@ It will install prerequisites packages, Docker, pip, PostgreSQL and clones Ruby 
 
 ![image](documents/pagerules.png)
 
-### After installation, you can check it in the browser:
+### After installation, you can check it in the browser
 
 ![image](documents/falcon1.png)
 
@@ -67,7 +67,7 @@ It will install prerequisites packages, Docker, pip, PostgreSQL and clones Ruby 
 
 ![image](documents/falcon7.png)
 
-### Falcon Port mapping table:
+### Falcon Port mapping table
 | Port | Service |
 |---|---|
 | `22` | SSHD |
