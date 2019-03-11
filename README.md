@@ -33,7 +33,7 @@ Then change directory to falcon root directory and run:
 ``` bash
 cd ~/falcon && ansible-playbook  -i hosts main.yml
 ```
-in case of connection error, SSH to the server, install python package and run ansible-playbook again:
+In case of connection error, SSH to the server, install python package and run ansible-playbook again:
 ``` bash
 ssh root@192.168.1.10 -p 22
 apt update  && apt install -y python && exit
